@@ -21,7 +21,7 @@ const options = {
 };
 mongoose.connect(MONGO_URL, options);
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 const ROOT_URL = `http://localhost:${port}`;
 
 const URL_MAP = {
