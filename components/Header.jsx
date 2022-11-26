@@ -10,10 +10,6 @@ import { styleToolbar } from './SharedStyles';
 
 const optionsMenu = [
   {
-    text: 'Got question?',
-    href: 'https://github.com/async-labs/builderbook/issues',
-  },
-  {
     text: 'Log out',
     href: '/logout',
     anchor: true,
@@ -55,7 +51,7 @@ function Header({ user }) {
                 ) : null}
               </div>
             ) : (
-              <Link href="/public/login" as="/login">
+              <Link href="/login" as="/login">
                 <a style={{ margin: '0px 20px 0px auto' }}>Log in</a>
               </Link>
             )}
