@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import Header from '../components/Header';
 
 import withAuth from '../lib/withAuth';
 
@@ -123,8 +124,3 @@ export default function Home() {
     </div>
   )
 }
-
-Index.propTypes = propTypes;
-Index.defaultProps = defaultProps;
-
-export default withAuth(Index);
