@@ -83,21 +83,6 @@ class UserClass {
       isAdmin: userCount === 0,
     });
 
-    try {
-      const template = await getEmailTemplate('welcome', {
-        userName: displayName,
-      });
-
-      await sendEmail({
-        from: `Kelly from Builder Book <${process.env.EMAIL_ADDRESS_FROM}>`,
-        to: [email],
-        subject: template.subject,
-        body: template.message,
-      });
-    } catch (err) {
-      console.error('Email sending error:', err);
-    }
-
     return _.pick(newUser, UserClass.publicFields());
   }
 }
