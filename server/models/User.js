@@ -89,7 +89,7 @@ class UserClass {
       });
 
       await sendEmail({
-        from: `Kelly from Builder Book <${process.env.EMAIL_ADDRESS_FROM}>`,
+        from: `Bitter chat app thing<${process.env.EMAIL_ADDRESS_FROM}>`,
         to: [email],
         subject: template.subject,
         body: template.message,
