@@ -21,11 +21,12 @@ const options = {
 };
 mongoose.connect(MONGO_URL, options);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const ROOT_URL = `http://localhost:${port}`;
 
 const URL_MAP = {
   '/login': '/public/login',
+  '/my-books': '/customer/my-books',
 };
 
 const app = next({ dev });

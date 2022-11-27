@@ -1,12 +1,16 @@
 {
-  "name": "finals",
-  "version": "0.1.0",
-  "private": true,
+  "name": "finalstarter",
+  "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev": "nodemon server/server.js --watch server",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint '**/*.js' '**/*.jsx'",
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "coverageDirectory": "./.coverage"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
