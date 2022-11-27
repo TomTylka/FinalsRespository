@@ -23,11 +23,9 @@ class Index extends React.Component {
     const { user } = this.props;
     return (
       <div style={{ padding: '10px 45px' }}>
-        <Head>
-          <Button variant="contained" style={styleLoginButton} href="chat">
-            Go to chat
-          </Button>
-        </Head>
+        <Button variant="contained" style={styleLoginButton} href="chat">
+          Go to chat
+        </Button>
         <p>Email:&nbsp;{user.email}</p>
       </div>
     );
