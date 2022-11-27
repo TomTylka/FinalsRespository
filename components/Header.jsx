@@ -11,7 +11,7 @@ import { styleToolbar } from './SharedStyles';
 const optionsMenu = [
   {
     text: 'Chat',
-    href: 'https://github.com/async-labs/builderbook/issues',
+    href: '/chat',
   },
   {
     text: 'Log out',
