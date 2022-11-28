@@ -5,7 +5,6 @@ const next = require('next');
 const mongoose = require('mongoose');
 
 const setupGoogle = require('./google');
-const User = require('./models/User');
 
 require('dotenv').config();
 
