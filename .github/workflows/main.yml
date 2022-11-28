@@ -46,7 +46,7 @@ jobs:
       with:
         switches: -vzr --include=".env" --delete
         path: ./
-        remote_path: C:\Users\Thomas\Repositories\finals # CHANGEMEMEMEMEMEMEMMEMEMMEMEMEMEMMEMEMMEMEMEMME
+        remote_path: /var/www/ttylka/ # CHANGEMEMEMEMEMEMEMMEMEMMEMEMEMEMMEMEMMEMEMEMME
         remote_host: ec2-34-221-53-119.us-west-2.compute.amazonaws.com
         remote_user: ubuntu
         remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
