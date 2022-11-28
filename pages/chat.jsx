@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { styleOtherButtons } from '../components/SharedStyles';
+import { textAreas } from '../components/SharedStyles';
+import { textAreas2 } from '../components/SharedStyles';
 
 
 import withAuth from '../lib/withAuth';
@@ -13,17 +16,17 @@ const propTypes = {
     email: PropTypes.string.isRequired,
   }),
 };
-
 const defaultProps = {
   user: null,
 };
-/*You would not believe how long it took me to realize that I could do it this way and not some convoluted solution for the google auth
-Three days to figure it out*/
- function Index() {
+
+/*You would not believe how long it took me to realize that I could do it this way and not some convoluted solution for the google auth*/
+ function Index({ user }) {
   const [username, setUsername] = useState('');
   const [chosenUsername, setChosenUsername] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  
 
   useEffect(() => {
     socketInitializer();
@@ -65,21 +68,21 @@ Three days to figure it out*/
       <main className="gap-4 flex flex-col items-center justify-center w-full h-full">
         {!chosenUsername ? (
           <>
-            <h3 className="font-bold text-white text-xl">How people should call you?</h3>
-            <input
+            <h3 className="font-bold text-white text-xl">Please choose a name</h3>
+            <input style={textAreas}
               type="text"
               placeholder="Identity..."
               value={username}
               className="p-3 rounded-md outline-none"
               onChange={(e) => setUsername(e.target.value)}
             />
-            <button
+            <button style={styleOtherButtons}
               onClick={() => {
                 setChosenUsername(username);
               }}
               className="bg-white rounded-md px-4 py-2 text-xl"
             >
-              Go!
+              Join!
             </button>
           </>
         ) : (
@@ -90,13 +93,13 @@ Three days to figure it out*/
                 {messages.map((msg, i) => {
                   return (
                     <div className="w-full py-1 px-2 border-b border-gray-200" key={i}>
-                      {msg.author} : {msg.message}
+                      {user.email} : {msg.author} : {msg.message}
                     </div>
                   );
                 })}
               </div>
               <div className="border-t border-gray-300 w-full flex rounded-bl-md">
-                <input
+                <input style={textAreas2}
                   type="text"
                   placeholder="New message..."
                   value={message}
@@ -105,7 +108,7 @@ Three days to figure it out*/
                   onKeyUp={handleKeypress}
                 />
                 <div className="border-l border-gray-300 flex justify-center items-center  rounded-br-md group hover:bg-purple-500 transition-all">
-                  <button type
+                  <button type style={styleOtherButtons}
                     className="group-hover:text-white px-3 h-full"
                     onClick={() => {
                       sendMessage();

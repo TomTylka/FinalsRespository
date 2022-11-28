@@ -29,7 +29,7 @@ class Index extends React.Component {
         </Head>
         <br />
         <p style={{ margin: '45px auto', fontSize: '44px', fontWeight: '400' }}>Chatter</p>
-        <p>Welcome!</p>
+        <p>Welcome to Chatter!</p>
         <br />
         <Button variant="contained" style={styleLoginButton} href="/chat">
           Click here to enter the chat room

@@ -10,7 +10,7 @@ const styleRaisedButton = {
 };
 
 const styleToolbar = {
-  background: '#FFF',
+  background: '#2d5b82',
   height: '64px',
   paddingRight: '20px',
 };
@@ -18,30 +18,30 @@ const styleToolbar = {
 const styleLoginButton = {
   borderRadius: '2px',
   textTransform: 'none',
-  font: '16px Muli',
+  font: '20px Muli',
   fontWeight: '400',
   letterSpacing: '0.01em',
   color: 'white',
-  backgroundColor: '#DF4930',
+  backgroundColor: '#0614ae',
 };
 
-const styleTextField = {
-  font: '15px Muli',
-  color: '#222',
-  fontWeight: '300',
+const styleOtherButtons = {
+  borderRadius: '2px',
+  textTransform: 'none',
+  font: '20px Muli',
+  fontWeight: '400',
+  letterSpacing: '0.02em',
+  color: 'white',
+  backgroundColor: '#0614ae',
 };
 
-const styleForm = {
-  margin: '7% auto',
-  width: '360px',
+const textAreas = {
+  height: '30px',
 };
 
-const styleGrid = {
-  margin: '0px auto',
-  font: '16px Muli',
-  color: '#222',
-  fontWeight: '300',
-  lineHeight: '1.5em',
+const textAreas2 = {
+  height: '30px',
+  margin: '700px 0px 0px 0px',
 };
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
   styleRaisedButton,
   styleToolbar,
   styleLoginButton,
-  styleTextField,
-  styleForm,
-  styleGrid,
+  styleOtherButtons,
+  textAreas,
+  textAreas2,
 };
