@@ -41,7 +41,7 @@ jobs:
         envkey_GOOGLE_CLIENTSECRET: ${{ secrets.GOOGLE_CLIENTSECRET }}
         envkey_AWS_ACCESSKEYID: ${{ secrets.AWS_ACCESSKEYID }}
         envkey_AWS_SECRETACCESSKEY: ${{ secrets.AWS_SECRETACCESSKEY }}
-        envkey_NEXT_PUBLIC_URL_APP: "http://tylka.acsg540.com" # CHANGEMEMEMEMEMEMEMEMEME
+        envkey_NEXT_PUBLIC_URL_APP: "http://ttylka.acsg540.com" # CHANGEMEMEMEMEMEMEMEMEME
         envkey_GITHUB_LIVE_CLIENTID: ${{ secrets.GHUB_LIVE_CLIENTID }}
         envkey_GITHUB_LIVE_SECRETKEY: ${{ secrets.GHUB_LIVE_SECRETKEY }}
 
