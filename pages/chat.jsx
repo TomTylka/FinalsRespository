@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { styleOtherButtons } from '../components/SharedStyles';
-import { textAreas } from '../components/SharedStyles';
-import { textAreas2 } from '../components/SharedStyles';
+import Head from 'next/head';
+import { textAreas,textAreas2,chatPage,styleOtherButtons } from '../components/SharedStyles';
+
 
 
 import withAuth from '../lib/withAuth';
@@ -21,7 +21,7 @@ const defaultProps = {
 };
 
 /*You would not believe how long it took me to realize that I could do it this way and not some convoluted solution for the google auth*/
- function Index({ user }) {
+ function Index({ user }) { 
   const [username, setUsername] = useState('');
   const [chosenUsername, setChosenUsername] = useState('');
   const [message, setMessage] = useState('');
@@ -64,52 +64,56 @@ const defaultProps = {
   };
 
   return (
-    <div className="flex items-center p-4 mx-auto min-h-screen justify-center bg-purple-500">
-      <main className="gap-4 flex flex-col items-center justify-center w-full h-full">
+    <div  style={chatPage}>
+        <Head>
+          <title>Chat!</title>
+          <meta name="description" content="Chatter" />
+          <link rel="icon" href="https://img.icons8.com/ios-glyphs/30/null/filled-chat.png" /> 
+        </Head>
+      <main>
         {!chosenUsername ? (
           <>
-            <h3 className="font-bold text-white text-xl">Please choose a name</h3>
+          <h1>Chatter!</h1>
+            <h3>Please choose a username</h3>
             <input style={textAreas}
               type="text"
-              placeholder="Identity..."
+              placeholder="username"
               value={username}
-              className="p-3 rounded-md outline-none"
               onChange={(e) => setUsername(e.target.value)}
             />
             <button style={styleOtherButtons}
               onClick={() => {
                 setChosenUsername(username);
               }}
-              className="bg-white rounded-md px-4 py-2 text-xl"
             >
               Join!
             </button>
           </>
         ) : (
           <>
-            <p className="font-bold text-white text-xl">Your username: {username}</p>
-            <div className="flex flex-col justify-end bg-white h-[20rem] min-w-[33%] rounded-md shadow-md ">
-              <div className="h-full last:border-b-0 overflow-y-scroll">
+          <h1>Welcome to the Chat!</h1>
+            <p>Your username: {username}</p>
+            <div>
+              <div>
                 {messages.map((msg, i) => {
                   return (
-                    <div className="w-full py-1 px-2 border-b border-gray-200" key={i}>
+                    <div key={i}>
                       {user.email} : {msg.author} : {msg.message}
                     </div>
                   );
                 })}
               </div>
-              <div className="border-t border-gray-300 w-full flex rounded-bl-md">
+              <div>
                 <input style={textAreas2}
                   type="text"
                   placeholder="New message..."
                   value={message}
-                  className="outline-none py-2 px-2 rounded-bl-md flex-1"
                   onChange={(e) => setMessage(e.target.value)}
                   onKeyUp={handleKeypress}
                 />
-                <div className="border-l border-gray-300 flex justify-center items-center  rounded-br-md group hover:bg-purple-500 transition-all">
+                <div>
                   <button type style={styleOtherButtons}
-                    className="group-hover:text-white px-3 h-full"
+                    
                     onClick={() => {
                       sendMessage();
                     }}

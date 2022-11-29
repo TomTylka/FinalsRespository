@@ -9,6 +9,7 @@ const Login = () => (
     <Head>
       <title>Log in</title>
       <meta name="description" content="Login page" />
+      <link rel="icon" href="https://img.icons8.com/ios-glyphs/30/null/filled-chat.png" />
     </Head>
     <br />
     <p style={{ margin: '45px auto', fontSize: '44px', fontWeight: '400' }}>Log in</p>

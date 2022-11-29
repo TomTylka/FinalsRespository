@@ -44,6 +44,12 @@ const textAreas2 = {
   margin: '700px 0px 0px 0px',
 };
 
+const chatPage = {
+  margin: '45px',
+  border: '3px solid black',
+  padding: '5px',
+};
+
 module.exports = {
   styleBigAvatar,
   styleRaisedButton,
@@ -52,4 +58,5 @@ module.exports = {
   styleOtherButtons,
   textAreas,
   textAreas2,
+  chatPage,
 };
